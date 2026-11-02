@@ -24,7 +24,7 @@ Data are from the CDC National Immunization Survey-Teen (NIS-Teen).
 3. Install the required R packages:
 
    ```r
-   install.packages(c("tidyverse", "gt", "rmarkdown"))
+   install.packages(c("tidyverse", "gt", "rmarkdown", "here"))
    ```
 
 4. Run `make` in the Terminal.
