@@ -1,0 +1,55 @@
+---
+title: "HPV Vaccination Coverage Among U.S. Adolescents"
+author: "Kristy Baus"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+
+library(tidyverse)
+library(gtsummary)
+library(gt)
+library(here)
+```
+
+```{r, here-i-am, include = FALSE}
+here::i_am("report.Rmd")
+```
+
+```{r load-data, include=FALSE}
+region_summary <- readRDS(
+  file = here::here("output", "region_summary.rds")
+)
+source(here::here("code", "table.R"))
+source(here::here("code", "figure.R"))
+```
+
+## Introduction
+
+This analysis uses data from the Centers for Disease Control and Prevention's National Immunization Survey-Teen (NIS-Teen). The dataset contains estimates of vaccination coverage among adolescents ages 13–17 years in the United States. Vaccination coverage estimates are available for multiple adolescent vaccines and are reported by geographic area and selected sociodemographic characteristics.
+
+Human papillomavirus (HPV) vaccination is an important component of routine adolescent vaccination. This analysis will examine HPV vaccination coverage among adolescents ages 13–17 across U.S. states and other reporting jurisdictions. The primary objective is to describe geographic variation in HPV vaccination coverage and identify differences in coverage across reporting areas.
+
+## Results
+
+### Create a table
+```{r hpv-table}
+create_table(region_summary)
+```
+
+Table 1 shows the average percentage of adolescents ages 13–17 who received at least one dose of the HPV vaccine in each U.S. region in 2025. State-level vaccination coverage estimates were grouped into four geographic regions: Northeast, South, North Central, and West.
+
+## Create a figure
+```{r hpv-figure}
+#| fig.cap = "Average state-level HPV vaccination coverage by U.S. region in 2025"
+
+create_figure(region_summary)
+```
+
+Figure 1 shows the average percentage of adolescents ages 13–17 who received at least one dose of the HPV vaccine across U.S. regions in 2025. This figures allows HPV vaccination coverage to be compared across the Northeast, Midwest, South, and West.
