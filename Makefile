@@ -7,4 +7,7 @@ output/region_summary.rds: code/clean_data.R data/vaccination.csv
 .PHONY: clean 
 clean:
 	rm -f output/*.rds report.html
-	
+
+.PHONY: install
+install: 
+	Rscript -e "renv::restore(prompt = FALSE)"
