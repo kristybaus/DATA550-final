@@ -2,3 +2,12 @@
 .Rhistory
 .RData
 .Ruserdata
+.git
+.DS_Store
+renv/library/
+renv/staging/
+renv/cache/
+output/
+report/
+report.html
+.dockerignore
