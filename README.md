@@ -60,6 +60,6 @@ https://hub.docker.com/r/kristybaus/data550-final
 
 With Docker running, execute the following command from the project directory:
 
-make docker-run
+```make docker-run```
 
-This command runs the Docker container and generates the compiled report in the report directory as report/report.html. No local image build or R package installation is require
+This command runs the Docker container and generates the compiled report in the report directory as report/report.html. No local image build or R package installation is required
