@@ -13,7 +13,6 @@ install:
 	Rscript -e "renv::restore(prompt = FALSE)"
 	
 .PHONY: docker-run
-
 docker-run:
 	mkdir -p report
-	docker run --rm -v "$(CURDIR)/report:/project/report" kristybaus/data550-final
+	docker run --rm --platform linux/amd64 -v "$(CURDIR)/report:/project/report" kristybaus/data550-final
