@@ -43,3 +43,23 @@ The final output is `report.html`.
 
 CDC Vaccination Coverage among Adolescents (13–17 Years):
 https://data.cdc.gov/d/ee48-w5t6
+
+## Building the Docker Image
+
+To build the Docker image locally, run:
+
+docker build --platform linux/amd64 -t kristybaus/data550-final .
+
+## DockerHub
+
+The Docker image is available at:
+
+https://hub.docker.com/r/kristybaus/data550-final
+
+## Generating the Report Using Docker
+
+With Docker running, execute the following command from the project directory:
+
+make docker-run
+
+This command runs the Docker container and generates the compiled report in the report directory as report/report.html. No local image build or R package installation is require
